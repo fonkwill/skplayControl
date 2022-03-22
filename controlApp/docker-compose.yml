@@ -1,13 +1,13 @@
-version: "3"
+version: "2"
 volumes:
   db: {}
 services:
-  control:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    restart: always
-    ports:
-      - "3000:3000"
-    volumes: 
-      - 'db:/db'
+  node:
+    image: "balenalib/raspberry-pi-alpine-node:latest"
+    user: "node"
+    working_dir: /home/node/app
+    volumes:
+      - db:/home/node/app
+    expose:
+      - "8081"
+    command: "npm start"
