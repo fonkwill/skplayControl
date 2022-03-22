@@ -3,10 +3,8 @@ volumes:
   db: {}
 services:
   node:
-    image: "balenalib/raspberry-pi-alpine-node:latest"
-    working_dir: /home/node/app
+    build: .
     volumes:
-      - db:/home/node/app/db
-    expose:
-      - "8081"
-    command: "npm start"
+      - db:/db
+    ports:
+      - "3000:3000"
