@@ -1,7 +1,18 @@
-var sqlite3 = require('sqlite3').verbose()
+var sqlite = require('sqlite')
+var sqlite3 = require('sqlite3')
 var md5 = require('md5')
 
 const DBSOURCE = "db/db.sqlite"
+
+
+// sqlite.open({
+//     filename: '/db/db.sqlite',
+//     driver: sqlite3.Database
+// }).then((db) => {
+//     console.log("connected")
+
+//     module.exports = db
+// })
 
 let db = new sqlite3.Database(DBSOURCE, (err) => {
     if (err) {
@@ -36,5 +47,7 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
     }
 });
 
-
 module.exports = db
+
+
+
