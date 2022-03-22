@@ -1,4 +1,4 @@
-var sqlite = require('sqlite')
+//var sqlite = require('sqlite')
 var sqlite3 = require('sqlite3')
 var md5 = require('md5')
 
