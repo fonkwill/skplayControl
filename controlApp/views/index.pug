@@ -1,0 +1,23 @@
+
+extends layout
+
+
+block content
+  script(src="/javascripts/requests.js")
+  h1= title
+  p Welcome to #{title}
+
+  button(onclick='playMusic()') Play Music 
+  button(onclick='pauseMusic()') Pause Music 
+  button(onclick='talkOver()') Talkover 
+  button(onclick='resetTalkOver()') Deactivate Talkover
+  button(onclick='playEinlaufmusik()') Play Einlaufmusik 
+  button(onclick='playTorhymne()') Play Torhymne 
+  button(onclick='stopScS()') Stop
+
+
+  
+
+  div#toast Toast-Text
+
+
