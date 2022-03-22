@@ -1,4 +1,4 @@
-FROM balenalib/raspberry-pi-alpine-node
+FROM balenalib/raspberry-pi-alpine-node:12.9.1
 
 # Create app directory
 WORKDIR /usr/src/app
