@@ -2,7 +2,7 @@
 var sqlite3 = require('sqlite3')
 var md5 = require('md5')
 
-const DBSOURCE = "db.sqlite"
+const DBSOURCE = "./db/db.sqlite"
 
 
 // sqlite.open({

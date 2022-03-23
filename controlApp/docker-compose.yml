@@ -5,6 +5,6 @@ services:
   node:
     build: .
     volumes:
-      - db:/db
+      - db:/usr/src/app/db
     ports:
       - "3000:3000"
