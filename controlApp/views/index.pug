@@ -7,13 +7,17 @@ block content
   h1= title
   p Welcome to #{title}
 
-  button(onclick='playMusic()') Play Music 
-  button(onclick='pauseMusic()') Pause Music 
-  button(onclick='talkOver()') Talkover 
-  button(onclick='resetTalkOver()') Deactivate Talkover
-  button(onclick='playEinlaufmusik()') Play Einlaufmusik 
-  button(onclick='playTorhymne()') Play Torhymne 
-  button(onclick='stopScS()') Stop
+  a(class='buttonc' onclick='playMusic()') Play Music 
+  
+  a(class='buttonc' onclick='pauseMusic()') Pause Music 
+  br
+  a(class='buttonc' onclick='talkOver()') Talkover 
+  a(class='buttonc' onclick='resetTalkOver()') Deactivate Talkover
+  br
+  br
+  a(class='buttonc' onclick='playEinlaufmusik()') Play Einlaufmusik 
+  a(class='buttonc' onclick='playTorhymne()') Play Torhymne 
+  a(class='buttonc' onclick='stopScS()') Stop
 
 
   
