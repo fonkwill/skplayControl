@@ -2,18 +2,31 @@
 
 //let snapstream = new SnapStream('ws://192.168.0.96:1780');
 
+var activated = false
+
+function activateSpeaker() {
 
 
-let snapstreamMusic = new SnapStream(config.baseUrl);
-var streamMusicMac = "00:00:00:00:00:01";
-snapstreamMusic.setClientParams('Music Speaker', streamMusicMac)
-let snapstreamShortCut = new SnapStream(config.baseUrl);
-var streamShortCutMac =  "00:00:00:00:00:02"
-snapstreamShortCut.setClientParams('ShortCutSongs Speaker', streamShortCutMac)
+    let snapstreamMusic = new SnapStream(config.baseUrl);
+    var streamMusicMac = "00:00:00:00:00:01";
+    snapstreamMusic.setClientParams('Music Speaker', streamMusicMac)
+    let snapstreamShortCut = new SnapStream(config.baseUrl);
+    var streamShortCutMac =  "00:00:00:00:00:02"
+    snapstreamShortCut.setClientParams('ShortCutSongs Speaker', streamShortCutMac)
 
-let snapcontroller = new SnapControl(config.baseUrl);
+    let snapcontroller = new SnapControl(config.baseUrl);
 
+    
+    (async() => {
+        console.log("waiting for variable");
+        while(snapcontroller.server.groups.length == 0) // define the condition as you like
+            await new Promise(resolve => setTimeout(resolve, 1000));
 
+        console.log("variable is defined");
+        setSteamsAndGroups();
+    })();
+
+}
 
 function setSteamsAndGroups(){
     console.log(snapcontroller.server.groups)
@@ -51,15 +64,6 @@ function setSteamsAndGroups(){
     if (schortCutStream && shortCutGroup) {
         snapcontroller.setStream(shortCutGroup.id, schortCutStream.id);
     }
+    activated = true
 };
-
-(async() => {
-    console.log("waiting for variable");
-    while(snapcontroller.server.groups.length == 0) // define the condition as you like
-        await new Promise(resolve => setTimeout(resolve, 1000));
-
-    console.log("variable is defined");
-    setSteamsAndGroups();
-})();
-console.log("above code doesn't block main function stack");
 
