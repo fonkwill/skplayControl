@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var scsRouter = require('./routes/scs');
 var musicRouter = require('./routes/music');
 var configRouter = require('./routes/config');
+var speakerRouter = require('./routes/speaker');
 
 
 var app = express();
@@ -28,6 +29,7 @@ app.use('/users', usersRouter);
 app.use('/scs', scsRouter);
 app.use('/music', musicRouter);
 app.use('/config', configRouter);
+app.use('/speaker', speakerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
