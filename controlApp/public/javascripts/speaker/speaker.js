@@ -67,3 +67,21 @@ function setSteamsAndGroups(){
     activated = true
 };
 
+
+let url = 'https://speaker_skplay.public.onsite.fonkwill.com';
+let username = 'skplay';
+let password = 'S!peaker';
+
+let headers = new Headers();
+
+//headers.append('Content-Type', 'text/json');
+headers.append('Authorization', 'Basic' + btoa(username + ":" + password));
+
+fetch(url, {method:'GET',
+        headers: headers,
+        //credentials: 'user:passwd'
+       })
+.then(response => response.json())
+.then(json => console.log(json));
+//.done();
+
