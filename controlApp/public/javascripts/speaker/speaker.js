@@ -68,20 +68,20 @@ function setSteamsAndGroups(){
 };
 
 
-let url = 'https://speaker_skplay.public.onsite.fonkwill.com/config';
-let username = 'skplay';
-let password = 'S!peaker';
+// let url = 'https://speaker_skplay.public.onsite.fonkwill.com/config';
+// let username = 'skplay';
+// let password = 'S!peaker';
 
-let headers = new Headers();
+// let headers = new Headers();
 
-//headers.append('Content-Type', 'text/json');
-headers.append('Authorization', 'Basic' + btoa(username + ":" + password));
+// //headers.append('Content-Type', 'text/json');
+// headers.append('Authorization', 'Basic' + btoa(username + ":" + password));
 
-fetch(url, {method:'GET',
-        headers: headers,
-        //credentials: 'user:passwd'
-       })
-.then(console.log("authenticated"))
-.then((res) => console.log(res));
-//.done();
+// fetch(url, {method:'GET',
+//         headers: headers,
+//         //credentials: 'user:passwd'
+//        })
+// .then(console.log("authenticated"))
+// .then((res) => console.log(res));
+// //.done();
 
